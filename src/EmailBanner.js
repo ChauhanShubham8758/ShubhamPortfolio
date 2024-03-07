@@ -48,7 +48,7 @@ export function EmailBanner() {
 
           <Group mt={30}>
             <Button radius="xl" size="md" className={classes.control}>
-              Get started
+              Resume
             </Button>
             <Button
               variant="default"
@@ -56,7 +56,7 @@ export function EmailBanner() {
               size="md"
               className={classes.control}
             >
-              Source code
+              Contact
             </Button>
           </Group>
         </div>

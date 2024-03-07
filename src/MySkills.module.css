@@ -1,0 +1,58 @@
+.card {
+    position: relative;
+    background-color: var(--mantine-color-body);
+  }
+  
+  .rating {
+    position: absolute;
+    top: var(--mantine-spacing-xs);
+    right: 12px;
+    pointer-events: none;
+  }
+  
+  .title {
+    display: block;
+    margin-top: var(--mantine-spacing-md);
+    margin-bottom: 5px;
+  }
+  
+  .action {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+  
+    /* @mixin hover {
+      background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6));
+    } */
+  }
+  
+  .footer {
+    margin-top: var(--mantine-spacing-md);
+  }
+
+  .card_img
+  {
+    object-fit: cover;
+    display: block;
+    width: 50%;
+    height: 50%;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: var(--mantine-radius-md);
+    height: rem(90px);
+    background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+    transition:
+      box-shadow 150ms ease,
+      transform 100ms ease;
+  
+    
+  }
+  
+  .item :hover {
+    box-shadow: var(--mantine-shadow-md);
+    transform: scale(1.05);
+  }
