@@ -54,12 +54,11 @@ export function Projects() {
       </Group>
 
       <Title order={2} className={classes.title} ta="center" mt="sm" mb="sm">
-        Integrate effortlessly with any technology stack
+      Discover My Creative Projects
       </Title>
 
       <Text c="dimmed" className={classes.description} ta="center" m={"auto"}>
-        Every once in a while, you’ll see a Golbat that’s missing some fangs.
-        This happens when hunger drives it to try biting a Steel-type Pokémon.
+      Discover my passion for innovation through meticulously crafted projects, where creativity meets attention to detail.
       </Text>
 
       <Tabs defaultValue="all" variant="pills">

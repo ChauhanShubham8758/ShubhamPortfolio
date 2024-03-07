@@ -19,7 +19,7 @@ export function ContactUs() {
         className={classes.contactContainer}
       >
         <div className={classes.socialMedia}>
-          <Title>Contact us</Title>
+          <Title>Get in touch</Title>
           <Text mt="sm">
             Leave your email and we will get back to you within 24 hours
           </Text>

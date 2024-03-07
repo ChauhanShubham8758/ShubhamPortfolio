@@ -35,15 +35,7 @@ export function EmailBanner() {
           </Title>
 
           <Text c="dimmed" mt="md">
-            I'm Smit Savani. I have completed my BE in computer engineering. I
-            have been working as a Junior React.js Developer at BigScal
-            Technologies for the past two years. I’m skilled in reactjs, as well
-            as HTML, CSS, and JavaScript. Throughout my working career, I've had
-            the opportunity to work on diverse projects where I've improved my
-            skills in front-end development, utilizing React.js to create
-            responsive user interfaces. I have also worked with APIs and am
-            familiar with version control programs like Git. I also pay close
-            attention to details and aim to write legible, clean code.
+          Experienced software developer with a versatile skill set, encompassing 1 year as a Blazor developer, 2 years as a .NET Core developer, and proficiency in React.js. I bring a track record of delivering high-quality solutions, specializing in dynamic web applications and robust server-side development. Skilled in C#, ASP.NET, and .NET Core, with a strong command of version control systems like Git and TFS. My hands-on experience with React.js includes the creation of engaging demos, demonstrating my ability to build interactive and responsive user interfaces. Committed to code quality, best practices, and collaborative teamwork, I am eager to contribute my expertise to innovative projects.
           </Text>
 
           <Group mt={30}>
