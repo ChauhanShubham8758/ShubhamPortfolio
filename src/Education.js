@@ -19,6 +19,11 @@ export default function Education() {
         <Text c="dimmed" size="sm">Saraswati Hindi Vidhyalay (83%)</Text>
         <Text size="xs" mt={4}>2016-2017</Text>
       </Timeline.Item>
+
+      <Timeline.Item bullet={<IconSchool size={12} />} title="S.S.C">
+        <Text c="dimmed" size="sm">Saraswati Hindi Vidhyalay (76.5%)</Text>
+        <Text size="xs" mt={4}>2014-2015</Text>
+      </Timeline.Item>
     
     </Timeline>
   );

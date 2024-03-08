@@ -34,7 +34,7 @@ export function EmailBanner() {
             {/* </Title> */}
           </Title>
 
-          <Text c="dimmed" mt="md">
+          <Text ta={"justify"} c="dimmed" mt="md">
           Experienced software developer with a versatile skill set, encompassing 1 year as a Blazor developer, 2 years as a .NET Core developer, and proficiency in React.js. I bring a track record of delivering high-quality solutions, specializing in dynamic web applications and robust server-side development. Skilled in C#, ASP.NET, and .NET Core, with a strong command of version control systems like Git and TFS. My hands-on experience with React.js includes the creation of engaging demos, demonstrating my ability to build interactive and responsive user interfaces. Committed to code quality, best practices, and collaborative teamwork, I am eager to contribute my expertise to innovative projects.
           </Text>
 

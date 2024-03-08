@@ -3,21 +3,10 @@ import { SegmentedControl, Flex, } from "@mantine/core";
 import classes from "./Experience.module.css";
 import WorkExperience from "./TimeLine";
 import Education from "./Education";
+import AboutMe from "./AboutMe";
 
 const tabs = {
-  about: (
-    <p className={classes.aboutDetails}>
-      I'm Smit Savani. I have completed my BE in computer engineering. I have
-      been working as a Junior React.js Developer at BigScal Technologies for
-      the past two years. I’m skilled in reactjs, as well as HTML, CSS, and
-      JavaScript. Throughout my working career, I've had the opportunity to work
-      on diverse projects where I've improved my skills in front-end
-      development, utilizing React.js to create responsive user interfaces. I
-      have also worked with APIs and am familiar with version control programs
-      like Git. I also pay close attention to details and aim to write legible,
-      clean code.
-    </p>
-  ),
+  about: <AboutMe></AboutMe>,
 
   general: <WorkExperience></WorkExperience>,
   test: <Education></Education>,

@@ -1,7 +1,5 @@
 .navbar {
     background-color: var(--mantine-color-body);
-    /* height: 840px; */
-    /* width: 300px; */
     padding: var(--mantine-spacing-md);
     display: flex;
     flex-direction: column;
@@ -14,6 +12,7 @@
     justify-content: center;
     display: flex;
     width: 100%;
+    height: 100%;
     max-width: 59pc;
   }
   
@@ -67,7 +66,8 @@
     display: flex;
   }
   .aboutDetails{
-    /* width: 40%; */
+    list-style: none;
+    text-align: justify;
   }
   .firstDiv
   {
@@ -78,10 +78,10 @@
   .imgDiv
   {
     width: 50%;
-    /* background: red; */
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
   }
 
   .sectionDiv
