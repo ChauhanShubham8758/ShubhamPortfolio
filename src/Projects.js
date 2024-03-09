@@ -137,7 +137,7 @@ export function Projects() {
        <Tabs.List display="flex" justify="center" mt={30}>{tabs}</Tabs.List>
 
         {projectTypes.map((tabName)=>(
-        <Tabs.Panel value={tabName}>
+        <Tabs.Panel key={tabName} value={tabName}>
           <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
             {features}
           </SimpleGrid>
