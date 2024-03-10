@@ -19,6 +19,7 @@
     background-color: #EDF2F8 !important;
     /* background-color: var(--mantine-color-white); */
     transition: box-shadow 150ms ease, transform 100ms ease;
+    height: 150px;
   }
   
   .item:hover {
@@ -29,5 +30,11 @@
 .skillContainer
 {
     /* background-color: #EDF2F8; */
+}
+
+.avatarImg
+{
+  height: 60% !important;
+  width: fit-content !important;
 }
   
