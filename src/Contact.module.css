@@ -13,9 +13,5 @@
     display: flex;
     justify-content: center;
     margin-top: 50px;
-}
-
-.contactContainer
-{
-    width: 65%;
+    margin-inline: 50px;
 }

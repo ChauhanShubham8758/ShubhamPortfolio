@@ -138,7 +138,7 @@ export function Projects() {
 
         {projectTypes.map((tabName)=>(
         <Tabs.Panel key={tabName} value={tabName}>
-          <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
+          <SimpleGrid cols={{ base: 1, md: 3, sm:2 }} spacing="xl" mt={50}>
             {features}
           </SimpleGrid>
         </Tabs.Panel>

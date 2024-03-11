@@ -7,6 +7,7 @@ import {
   Tabs,
   Avatar,
 } from "@mantine/core";
+import { useState } from "react";
 import classes from "./SkillsSection.module.css";
 
 const mockdata = [
@@ -27,7 +28,7 @@ const mockdata = [
   },
   {
     title: "SQL Server",
-    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710079118/projects/rierepvh24debowfiipl.png",
+    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710136856/projects/ywfr4vbandffipukhymo.png",
     type: ["back-end"],
   },
   {
@@ -37,7 +38,7 @@ const mockdata = [
   },
   {
     title: "Asp.net MVC",
-    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710087287/projects/rxc8wetadhyhhhha7x8n.png",
+    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710133742/projects/dqlpvwxnrgbxpyf3a2wy.png",
     type: ["back-end"],
   },
   {
@@ -57,7 +58,7 @@ const mockdata = [
   },
   {
     title: "EF Core",
-    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710089621/projects/s9y0alqnwcvviii7ndhb.png",
+    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710134056/projects/cyfbwvg27gigdf3suzfa.png",
     type: ["back-end"],
   },
   {
@@ -112,29 +113,39 @@ const mockdata = [
   },
 ];
 
-const projectTypes = ["all", "front-end", "back-end"];
-const tabs = projectTypes.map((item) => (
-  <Tabs.Tab key={item} value={item}>
-    {item}
-  </Tabs.Tab>
-));
+const projectTypes = ["all",...new Set(mockdata.flatMap(({type})=>type.map(Project=>Project.toLowerCase())))];
 
 export function SkillsSection() {
-  const items = mockdata.map((item) => (
-    <UnstyledButton key={item.title} className={classes.item}>
-      <Avatar
-        variant="filled"
-        radius="xs"
-        size="lg"
-        src={item.logo}
-        className={classes.avatarImg}
-      />
+  const [activeTab,setActiveTab]=useState("all");
 
-      <Text size="xs" mt={7}>
-        {item.title}
-      </Text>
-    </UnstyledButton>
+  const features = mockdata
+  .filter(
+    ({ type }) =>
+      activeTab === "all" ||
+      type.some((project)=>project.toLowerCase()===activeTab.toLowerCase())
+  )
+  .map((item) => (
+    <UnstyledButton key={item.title} className={classes.item}>
+    <Avatar
+      variant="filled"
+      radius="xs"
+      size="lg"
+      src={item.logo}
+      className={classes.avatarImg}
+    />
+
+    <Text size="xs" mt={7}>
+      {item.title}
+    </Text>
+  </UnstyledButton>
   ));
+
+  const tabs = projectTypes.map((item) => (
+    <Tabs.Tab key={item} value={item}>
+      {item.toUpperCase()}
+    </Tabs.Tab>
+  ));
+
 
   return (
     <div className={classes.skillContainer}>
@@ -143,13 +154,15 @@ export function SkillsSection() {
           My Technical Skills
         </Title>
 
-        <Tabs defaultValue="all" variant="pills">
-          <Tabs.List>{tabs}</Tabs.List>
-          <Tabs.Panel value="all">
-            <SimpleGrid cols={{ base: 1, md: 5 }} spacing="xl" mt={50}>
-              {items}
-            </SimpleGrid>
-          </Tabs.Panel>
+        <Tabs defaultValue="all" variant="pills" onChange={setActiveTab}>
+        <Tabs.List display="flex" justify="center" mt={30}>{tabs}</Tabs.List>
+          {projectTypes.map((tabName)=>(
+        <Tabs.Panel key={tabName} value={tabName}>
+          <SimpleGrid cols={{ base: 1, md: 5, sm:4 }} spacing="xl" mt={50}>
+            {features}
+          </SimpleGrid>
+        </Tabs.Panel>
+        ))}
         </Tabs>
       </Container>
     </div>

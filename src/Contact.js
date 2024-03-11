@@ -17,16 +17,16 @@ export function ContactUs() {
         cols={{ base: 1, sm: 2 }}
         spacing={50}
         className={classes.contactContainer}
-      >
+        >
         <div className={classes.socialMedia}>
           <Title>Get in touch</Title>
           <Text mt="sm">
-            Leave your email and we will get back to you within 24 hours
+            If you wish to react out to me please feel free to leave your mail here
           </Text>
           <Image
             radius="md"
             h={400}
-            w="auto"
+            w="100%"
             fit="contain"
             src="https://res.cloudinary.com/dcmpkhero/image/upload/v1709723761/projects/wzjl7f8indce5fyufhzq.jpg"
           />
@@ -38,7 +38,7 @@ export function ContactUs() {
           <Textarea
             required
             label="Your message"
-            placeholder="I want to order your goods"
+            placeholder="Drop your message here"
             minRows={4}
             mt="md"
           />
