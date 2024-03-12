@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SegmentedControl, Flex, } from "@mantine/core";
+import { SegmentedControl, Flex, Group, Title, Badge } from "@mantine/core";
 import classes from "./Experience.module.css";
 import WorkExperience from "./TimeLine";
 import Education from "./Education";
@@ -16,48 +16,57 @@ export function Experience() {
   const [section, setSection] = useState("about");
 
   return (
-   <section id="about">
-     <nav className={classes.navbar}>
-      <div className={classes.experienceDiv}>
-        <Flex
-          mih={50}
-          gap="xl"
-          justify="center"
-          align="center"
-          direction="row"
-          wrap="wrap"
-        >
-          <SegmentedControl
-            className={classes.segmentList}
-            m={"auto"}
-            value={section}
-            onChange={(value) => setSection(value)}
-            transitionTimingFunction="ease"
-            size="md"
-            radius="xl"
-            data={[
-              { label: "About me", value: "about" },
-              { label: "Experience", value: "general" },
-              { label: "Education", value: "test" },
-            ]}
-          />
-        </Flex>
-      </div>
+    <section id="about" className={classes.aboutSection}>
+      <Group justify="center">  
+        <Badge variant="filled" size="lg">
+          Experience at a Glance{" "}
+        </Badge>
+      </Group>
 
-      <div className={classes.firstDiv}>
-        <div className={classes.navbarMain}>
-          <div className={classes.imgDiv}>
-            <img
-              src="https://res.cloudinary.com/dcmpkhero/image/upload/v1709723761/projects/wzjl7f8indce5fyufhzq.jpg"
-              width={400}
-              height={400}
-              alt="not-found"
-            ></img>
-          </div>
-          <div className={classes.sectionDiv}>{tabs[section]}</div>
+      <Title order={2} className={classes.title} ta="center" mt="xl" mb="xl">
+        Explore my journey's highlights in a glance.
+      </Title>
+      <nav className={classes.navbar}>
+        <div className={classes.experienceDiv}>
+          <Flex
+            mih={50}
+            gap="xl"
+            justify="center"
+            align="center"
+            direction="row"
+            wrap="wrap"
+          >
+            <SegmentedControl
+              className={classes.segmentList}
+              m={"auto"}
+              value={section}
+              onChange={(value) => setSection(value)}
+              transitionTimingFunction="ease"
+              size="md"
+              radius="xl"
+              data={[
+                { label: "About me", value: "about" },
+                { label: "Experience", value: "general" },
+                { label: "Education", value: "test" },
+              ]}
+            />
+          </Flex>
         </div>
-      </div>
-    </nav>
-   </section>
+
+        <div className={classes.firstDiv}>
+          <div className={classes.navbarMain}>
+            <div className={classes.imgDiv}>
+              <img
+                src="https://res.cloudinary.com/dcmpkhero/image/upload/v1709723761/projects/wzjl7f8indce5fyufhzq.jpg"
+                width={400}
+                height={400}
+                alt="not-found"
+              ></img>
+            </div>
+            <div className={classes.sectionDiv}>{tabs[section]}</div>
+          </div>
+        </div>
+      </nav>
+    </section>
   );
 }

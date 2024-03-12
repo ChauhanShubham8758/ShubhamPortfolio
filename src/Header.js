@@ -66,6 +66,7 @@ export function Header() {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      closeDrawer(true);
     }
   };
 
@@ -199,14 +200,34 @@ export function Header() {
       >
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
 
-          <a href="#" className={classes.link}>
+          <a href="#" className={classes.link}
+           onClick={() => handleScroll("home")}
+          >
             Home
+          </a>
+
+          <a href="#" className={classes.link} onClick={() => handleScroll("about")}>
+            About
+          </a>
+          <a href="#" className={classes.link} onClick={() => handleScroll("projects")}>
+            Projects
+          </a>
+
+          <a href="#" className={classes.link} onClick={() => handleScroll("skills")}>
+            Skills
+          </a>
+
+          <a href="#" className={classes.link} onClick={() => handleScroll("skills")}>
+            Skills
+          </a>
+          <a href="#" className={classes.link} onClick={() => handleScroll("contact")}>
+            Contact me
           </a>
           
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
-                Features
+                Connect with Me
               </Box>
               <IconChevronDown
                 style={{ width: rem(16), height: rem(16) }}
@@ -215,12 +236,7 @@ export function Header() {
             </Center>
           </UnstyledButton>
           <Collapse in={linksOpened}>{links}</Collapse>
-          <a href="#" className={classes.link}>
-            Learn
-          </a>
-          <a href="#" className={classes.link}>
-            Academy
-          </a>
+          
 
           <Divider my="sm" />
 

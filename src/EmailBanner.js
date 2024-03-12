@@ -6,17 +6,19 @@ import {
   Group,
   Text,
   Flex,
+  rem,
+  ActionIcon,
 } from "@mantine/core";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
 import { TypeAnimation } from "react-type-animation";
 import classes from "./EmailBanner.module.css";
 
 export function EmailBanner() {
   return (
-   
-     <div className={classes.outer}>
+    <div className={classes.outer}>
       <Container
         pt={{ sm: "20px", md: "100px" }}
-        pb={{ sm: "80px", md: "100px", xs: "66px" , lg:"100px"}}
+        pb={{ sm: "80px", md: "100px", xs: "66px", lg: "100px" }}
         pl={{ sm: "0" }}
         pr={{ sm: "0" }}
         className={classes.banner_container}
@@ -62,22 +64,43 @@ export function EmailBanner() {
             </Text>
 
             <Group mt={30} justify={"center"}>
-              <Button radius="xl" size="md" className={classes.control}>
-                Resume
-              </Button>
-              <Button
-                variant="default"
-                radius="xl"
-                size="md"
-                className={classes.control}
+              <a
+                style={{ color: "white", textDecoration: "none" }}
+                target="_blank"
+                href="https://res.cloudinary.com/dcmpkhero/image/upload/v1710267393/projects/my%20resume/Shubham_Chauhan_Resume.pdf"
+                rel="noreferrer"
               >
-                Contact
-              </Button>
+                <Button radius="xl" size="md" className={classes.control}>
+                  Resume
+                </Button>
+              </a>
+
+              <a
+                style={{ color: "white", textDecoration: "none" }}
+                target="_blank"
+                href="https://wa.me/919106909466"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="filled"
+                  radius="xl"
+                  size="md"
+                  color="teal"
+                  // className={classes.control}
+                >
+                  WhatsApp
+                  <ActionIcon size="lg" color="white" variant="transparent">
+                    <IconBrandWhatsapp
+                      style={{ width: rem(25), height: rem(25) }}
+                      stroke={1.5}
+                    />
+                  </ActionIcon>
+                </Button>
+              </a>
             </Group>
           </Container>
         </Flex>
       </Container>
     </div>
-   
   );
 }

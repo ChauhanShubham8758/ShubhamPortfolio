@@ -5,7 +5,7 @@ export default function WorkExperience() {
   return (
     <Timeline active={4} bulletSize={24} lineWidth={2}>
       <Timeline.Item bullet={<IconCode size={12} />} title="Dotnet Core Developer" pb={'35px'}>
-        <Text c="dimmed" size="sm">
+        <Text c="dimmed" size="md">
         Bigscal Technologies Pvt. Ltd.
           </Text>
         <Text size="xs" mt={4}>
@@ -14,7 +14,7 @@ export default function WorkExperience() {
       </Timeline.Item>
 
       <Timeline.Item bullet={<IconCode size={12} />} title="Asp.net MVC & Blazor Developer" pb={'35px'}>
-      <Text c="dimmed" size="sm">
+      <Text c="dimmed" size="md">
         Bigscal Technologies Pvt. Ltd.
           </Text>
           <Text size="xs" mt={4}>
@@ -23,18 +23,13 @@ export default function WorkExperience() {
       </Timeline.Item>
 
       <Timeline.Item title="Internship (Dotnet Core)" bullet={<IconCode size={12} />}>
-      <Text c="dimmed" size="sm">
+      <Text c="dimmed" size="md">
         Bigscal Technologies Pvt. Ltd.
           </Text>
           <Text size="xs" mt={4}>
         Dec 2021- May 2022
         </Text>
       </Timeline.Item>
-
-      {/* <Timeline.Item title="Code review" bullet={<IconMessageDots size={12} />}>
-        <Text c="dimmed" size="sm"><Text variant="link" component="span" inherit>Robert Gluesticker</Text> left a code review on your pull request</Text>
-        <Text size="xs" mt={4}>12 minutes ago</Text>
-      </Timeline.Item> */}
     </Timeline>
   );
 }

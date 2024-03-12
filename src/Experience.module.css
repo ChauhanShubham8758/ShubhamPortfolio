@@ -74,6 +74,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 .imgDiv {
   width: 50%;
@@ -98,4 +99,23 @@
   .segmentList {
     width: 100% !important;
   }
+}
+
+
+@media (max-width: 768px) {
+  /* .imgDiv {
+    display: none;
+  } */
+
+  .sectionDiv {
+    width: 100%;
+  }
+  .segmentList {
+    width: 100% !important;
+  }
+}
+
+.aboutSection{
+  margin-top: 50px;
+  margin-bottom: 50px;
 }

@@ -10,7 +10,7 @@ export function FooterLinks() {
   return (
     <footer className={classes.footer}>
       <div className={classes.footerWraper}>
-        <div className={classes.rightsDiv}>© 2024 Shubham Chauhan. All rights reserved.</div>
+        <div className={classes.rightsDiv}>Designed and build by Shubham Chauhan © 2024. All rights reserved.</div>
 
         <Group
           gap={rem(10)}
