@@ -16,7 +16,8 @@ export function Experience() {
   const [section, setSection] = useState("about");
 
   return (
-    <nav className={classes.navbar}>
+   <section id="about">
+     <nav className={classes.navbar}>
       <div className={classes.experienceDiv}>
         <Flex
           mih={50}
@@ -57,5 +58,6 @@ export function Experience() {
         </div>
       </div>
     </nav>
+   </section>
   );
 }

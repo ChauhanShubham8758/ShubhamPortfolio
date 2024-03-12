@@ -96,3 +96,18 @@
       margin-top: var(--mantine-spacing-xs);
     } */
   }
+
+  @media (max-width: 426px) {
+    .footerWraper{
+      display: block;
+    }
+    .rightsDiv
+    {
+      text-align: center;
+    }
+    .social {
+      justify-content: center !important;
+      padding-top: 20px;
+    }
+  }
+  

@@ -1,17 +1,20 @@
-.socialMedia
-{
+.socialMedia {
 }
-.contactForm
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.contactParentDiv
-{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    margin-inline: 50px;
+.contactParentDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-inline: 50px;
+}
+
+@media (max-width: 426px) {
+  .contactParentDiv {
+    margin-bottom: 50px;
+  }
 }

@@ -2,7 +2,6 @@
   height: 85px;
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
-  border-bottom: 1px solid var(--mantine-color-gray-3);
 }
 
 .link {
@@ -17,15 +16,15 @@
   font-size: var(--mantine-font-size-sm);
 }
 
-@media (max-width: 420px) {
+@media (max-width: 426px) {
   .link {
     height: 42px;
     width: 100%;
   }
 }
 .link:hover {
-  background-color: 
-    var(--mantine-color-gray-0),
+  background-color: transparent !important;;
+    color: black;
 }
 
 .subLink {
@@ -50,7 +49,8 @@
   border-top: 1px solid var(--mantine-color-gray-1);
 }
 
-.nameDiv
-{
-  width: 10%;
+@media (max-width: 768px) {
+  .tabListItems{
+    gap: 30px !important;
+  }
 }

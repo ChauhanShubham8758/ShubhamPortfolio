@@ -116,7 +116,8 @@ export function Projects() {
   ));
 
   return (
-    <Container size="lg" py="xl">
+   <section  id="projects">
+     <Container size="lg" py="xl">
       <Group justify="center">
         <Badge variant="filled" size="lg">
           My Projects
@@ -145,5 +146,6 @@ export function Projects() {
         ))}
       </Tabs>
     </Container>
+   </section>
   );
 }

@@ -8,11 +8,11 @@ import '@mantine/core/styles.css';
 
 const theme = createTheme({
   breakpoints: {
-    xs: '426px',
-    sm: '48em',
-    md: '64em',
-    lg: '74em',
-    xl: '90em',
+    xxs: '320px',
+    xs: '425px',
+    sm: '768px',
+    md: '1024px',
+    lg: '1440px',
   },
 });
 const root = ReactDOM.createRoot(document.getElementById('root'));

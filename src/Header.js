@@ -6,7 +6,6 @@ import {
   Text,
   SimpleGrid,
   ThemeIcon,
-  Anchor,
   Divider,
   Center,
   Box,
@@ -16,51 +15,44 @@ import {
   ScrollArea,
   rem,
   useMantineTheme,
-  Image
+  Image,
+  Tabs,
+  px,
 } from "@mantine/core";
-import { MantineLogo } from "@mantinex/mantine-logo";
 import { useDisclosure } from "@mantine/hooks";
 import {
-  IconNotification,
-  IconCode,
-  IconBook,
-  IconChartPie3,
-  IconFingerprint,
-  IconCoin,
+  IconMail,
+  IconBrandGithub,
   IconChevronDown,
+  IconBrandLinkedin,
+  IconBrandMedium,
 } from "@tabler/icons-react";
 import classes from "./Header.module.css";
 
 const mockdata = [
   {
-    icon: IconCode,
-    title: "Open source",
-    description: "This Pokémon’s cry is very loud and distracting",
+    icon: IconBrandGithub,
+    title: "Github",
+    description: "Explore my codebase and projects in one place.",
+    link: "https://github.com/ChauhanShubham8758",
   },
   {
-    icon: IconCoin,
-    title: "Free for everyone",
-    description: "The fluid of Smeargle’s tail secretions changes",
+    icon: IconBrandLinkedin,
+    title: "LinkedIn",
+    description: "Enhancing connections on LinkedIn. Let's connect!",
+    link: "https://www.linkedin.com/in/shubham-c-4b0739153/",
   },
   {
-    icon: IconBook,
-    title: "Documentation",
-    description: "Yanma is capable of seeing 360 degrees without",
+    icon: IconBrandMedium,
+    title: "Medium",
+    description: "Check out my blog on Medium for interesting reads.",
+    link: "https://medium.com/@chauhanshubham19765",
   },
   {
-    icon: IconFingerprint,
-    title: "Security",
-    description: "The shell’s rounded shape and the grooves on its.",
-  },
-  {
-    icon: IconChartPie3,
-    title: "Analytics",
-    description: "This Pokémon uses its flying ability to quickly chase",
-  },
-  {
-    icon: IconNotification,
-    title: "Notifications",
-    description: "Combusken battles with the intensely hot flames it spews",
+    icon: IconMail,
+    title: "Gmail",
+    description: "chauhanshubham19765@gmail.com",
+    link: "mailto:chauhanshubham19765@gmail.com",
   },
 ];
 
@@ -70,107 +62,125 @@ export function Header() {
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
 
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const links = mockdata.map((item) => (
-    <UnstyledButton className={classes.subLink} key={item.title}>
-      <Group wrap="nowrap" align="flex-start">
-        <ThemeIcon size={34} variant="default" radius="md">
-          <item.icon
-            style={{ width: rem(22), height: rem(22) }}
-            color={theme.colors.blue[6]}
-          />
-        </ThemeIcon>
-        <div>
-          <Text size="sm" fw={500}>
-            {item.title}
-          </Text>
-          <Text size="xs" c="dimmed">
-            {item.description}
-          </Text>
-        </div>
-      </Group>
-    </UnstyledButton>
+    <a href={item.link} color="black" key={item.link}>
+      <UnstyledButton className={classes.subLink} key={item.title}>
+        <Group wrap="nowrap" align="flex-start">
+          <ThemeIcon size={34} variant="default" radius="md">
+            <item.icon
+              style={{ width: rem(22), height: rem(22) }}
+              color={theme.colors.blue[6]}
+            />
+          </ThemeIcon>
+          <div>
+            <Text size="sm" fw={500} c={"black"}>
+              {item.title}
+            </Text>
+            <Text size="xs" c="dimmed">
+              {item.description}
+            </Text>
+          </div>
+        </Group>
+      </UnstyledButton>
+    </a>
   ));
 
   return (
-    <Box>
+    <Box bg="#EDF2F8">
       <header className={classes.header}>
-        <Group justify="space-between" h="100%">
-          {/* <MantineLogo size={30} /> */}
-          <div className={classes.nameDiv}>
+        <Group justify="space-between" align="center" pt={10}>
           <Image
-              src="https://res.cloudinary.com/dcmpkhero/image/upload/v1710161110/projects/zaef2jg2t1pwwhdi6em2.png"
-              size={30}
-              height={40}
-              width={40}
-            />
-          </div>
+            src="https://res.cloudinary.com/dcmpkhero/image/upload/v1710161110/projects/zaef2jg2t1pwwhdi6em2.png"
+            height={40}
+            width={50}
+            display={{
+              xxs: "none",
+              xs: "none",
+              sm: "none",
+              md: "block",
+              lg: "block",
+            }}
+          />
 
           <Group h="100%" gap={0} visibleFrom="sm">
-            <a href="#" className={classes.link}>
-              Home
-            </a>
-            <HoverCard
-              width={600}
-              position="bottom"
-              radius="md"
-              shadow="md"
-              withinPortal
-            >
-              <HoverCard.Target>
-                <a href="#" className={classes.link} padding={"0"}>
-                  <Center inline>
-                    <Box component="span" mr={5}>
-                      Features
-                    </Box>
-                    <IconChevronDown
-                      style={{ width: rem(16), height: rem(16) }}
-                      color={theme.colors.blue[6]}
-                    />
-                  </Center>
-                </a>
-              </HoverCard.Target>
+            <Tabs variant="pills" defaultValue="Home">
+              <Tabs.List className={classes.tabListItems}>
+                <Tabs.Tab
+                  value="Home"
+                  className={classes.link}
+                  onClick={() => handleScroll("home")}
+                >
+                  Home
+                </Tabs.Tab>
 
-              <HoverCard.Dropdown style={{ overflow: "hidden" }}>
-                <Group justify="space-between" px="md">
-                  <Text fw={500}>Features</Text>
-                  <Anchor href="#" fz="xs">
-                    View all
-                  </Anchor>
-                </Group>
+                <Tabs.Tab
+                  value="About"
+                  className={classes.link}
+                  onClick={() => handleScroll("about")}
+                >
+                  About
+                </Tabs.Tab>
 
-                <Divider my="sm" />
+                <Tabs.Tab
+                  value="Projects"
+                  className={classes.link}
+                  onClick={() => handleScroll("projects")}
+                >
+                  Projects
+                </Tabs.Tab>
 
-                <SimpleGrid cols={2} spacing={0}>
-                  {links}
-                </SimpleGrid>
+                <Tabs.Tab
+                  value="Skills"
+                  className={classes.link}
+                  onClick={() => handleScroll("skills")}
+                >
+                  Skills
+                </Tabs.Tab>
+                <Tabs.Tab
+                  value="Contact Me"
+                  className={classes.link}
+                  onClick={() => handleScroll("contact")}
+                >
+                  Contact Me
+                </Tabs.Tab>
 
-                <div className={classes.dropdownFooter}>
-                  <Group justify="space-between">
-                    <div>
-                      <Text fw={500} fz="sm">
-                        Get started
-                      </Text>
-                      <Text size="xs" c="dimmed">
-                        Their food sources have decreased, and their numbers
-                      </Text>
-                    </div>
-                    <Button variant="default">Get started</Button>
-                  </Group>
-                </div>
-              </HoverCard.Dropdown>
-            </HoverCard>
-            <a href="#" className={classes.link}>
-              Learn
-            </a>
-            <a href="#" className={classes.link}>
-              Academy
-            </a>
+                <HoverCard
+                  width={600}
+                  position="bottom"
+                  radius="md"
+                  shadow="md"
+                  withinPortal
+                >
+                  <HoverCard.Target>
+                    <Button className={classes.link} padding={"0"} variant="subtle" color="black">
+                      <Center inline>
+                        <Box component="span" mr={5}>
+                          Connect with me
+                        </Box>
+                        <IconChevronDown
+                          style={{ width: rem(16), height: rem(16) }}
+                          color={theme.colors.blue[6]}
+                        />
+                      </Center>
+                    </Button>
+                  </HoverCard.Target>
+
+                  <HoverCard.Dropdown style={{ overflow: "hidden" }}>
+                    <SimpleGrid cols={2} spacing={0}>
+                      {links}
+                    </SimpleGrid>
+                  </HoverCard.Dropdown>
+                </HoverCard>
+              </Tabs.List>
+            </Tabs>
           </Group>
-
-          {/* <Group visibleFrom="sm">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
-          </Group> */}
 
           <Burger
             opened={drawerOpened}
@@ -179,22 +189,20 @@ export function Header() {
           />
         </Group>
       </header>
-
       <Drawer
         opened={drawerOpened}
         onClose={closeDrawer}
         size="100%"
         padding="md"
-        title="Navigation"
         hiddenFrom="sm"
         zIndex={1000000}
       >
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
-          <Divider my="sm" />
 
           <a href="#" className={classes.link}>
             Home
           </a>
+          
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
@@ -222,6 +230,76 @@ export function Header() {
           </Group>
         </ScrollArea>
       </Drawer>
+
+      {/* <Drawer
+        opened={drawerOpened}
+        onClose={closeDrawer}
+        size="100%"
+        padding="md"
+        hiddenFrom="sm"
+        zIndex={1000000}
+      >
+        <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md" display={"grid"}>
+          <Button
+            href="#"
+            className={classes.link}
+            onClick={() => handleScroll("home")}
+          >
+            Home
+          </Button>
+
+          <Button
+            href="#"
+            className={classes.link}
+            onClick={() => handleScroll("about")}
+          >
+            About
+          </Button>
+
+          <Button
+            href="#"
+            className={classes.link}
+            onClick={() => handleScroll("projects")}
+          >
+            Projects
+          </Button>
+
+          <Button
+            href="#"
+            className={classes.link}
+            onClick={() => handleScroll("skills")}
+          >
+            Skills
+          </Button>
+
+          <Button
+            href="#"
+            className={classes.link}
+            onClick={() => handleScroll("contact")}
+          >
+            Contact Me
+          </Button>
+          <UnstyledButton className={classes.link} onClick={toggleLinks}>
+            <Center inline>
+              <Box component="span" mr={5}>
+                Connect with me
+              </Box>
+              <IconChevronDown
+                style={{ width: rem(16), height: rem(16) }}
+                color={theme.colors.blue[6]}
+              />
+            </Center>
+          </UnstyledButton>
+          <Collapse in={linksOpened}>{links}</Collapse>
+
+          <Divider my="sm" />
+
+          <Group justify="center" grow pb="xl" px="md">
+            <Button variant="default">Log in</Button>
+            <Button>Sign up</Button>
+          </Group>
+        </ScrollArea>
+      </Drawer> */}
     </Box>
   );
 }

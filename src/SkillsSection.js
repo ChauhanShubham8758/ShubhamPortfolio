@@ -113,32 +113,39 @@ const mockdata = [
   },
 ];
 
-const projectTypes = ["all",...new Set(mockdata.flatMap(({type})=>type.map(Project=>Project.toLowerCase())))];
+const projectTypes = [
+  "all",
+  ...new Set(
+    mockdata.flatMap(({ type }) => type.map((Project) => Project.toLowerCase()))
+  ),
+];
 
 export function SkillsSection() {
-  const [activeTab,setActiveTab]=useState("all");
+  const [activeTab, setActiveTab] = useState("all");
 
   const features = mockdata
-  .filter(
-    ({ type }) =>
-      activeTab === "all" ||
-      type.some((project)=>project.toLowerCase()===activeTab.toLowerCase())
-  )
-  .map((item) => (
-    <UnstyledButton key={item.title} className={classes.item}>
-    <Avatar
-      variant="filled"
-      radius="xs"
-      size="lg"
-      src={item.logo}
-      className={classes.avatarImg}
-    />
+    .filter(
+      ({ type }) =>
+        activeTab === "all" ||
+        type.some(
+          (project) => project.toLowerCase() === activeTab.toLowerCase()
+        )
+    )
+    .map((item) => (
+      <UnstyledButton key={item.title} className={classes.item}>
+        <Avatar
+          variant="filled"
+          radius="xs"
+          size="lg"
+          src={item.logo}
+          className={classes.avatarImg}
+        />
 
-    <Text size="xs" mt={7}>
-      {item.title}
-    </Text>
-  </UnstyledButton>
-  ));
+        <Text size="xs" mt={7}>
+          {item.title}
+        </Text>
+      </UnstyledButton>
+    ));
 
   const tabs = projectTypes.map((item) => (
     <Tabs.Tab key={item} value={item}>
@@ -146,25 +153,38 @@ export function SkillsSection() {
     </Tabs.Tab>
   ));
 
-
   return (
-    <div className={classes.skillContainer}>
-      <Container size="lg" py="xl">
-        <Title order={2} className={classes.title} ta="center" mt="sm" mb="sm">
-          My Technical Skills
-        </Title>
+    <section id="skills">
+      <div className={classes.skillContainer}>
+        <Container size="lg" py="xl">
+          <Title
+            order={2}
+            className={classes.title}
+            ta="center"
+            mt="sm"
+            mb="sm"
+          >
+            My Technical Skills
+          </Title>
 
-        <Tabs defaultValue="all" variant="pills" onChange={setActiveTab}>
-        <Tabs.List display="flex" justify="center" mt={30}>{tabs}</Tabs.List>
-          {projectTypes.map((tabName)=>(
-        <Tabs.Panel key={tabName} value={tabName}>
-          <SimpleGrid cols={{ base: 1, md: 5, sm:4 }} spacing="xl" mt={50}>
-            {features}
-          </SimpleGrid>
-        </Tabs.Panel>
-        ))}
-        </Tabs>
-      </Container>
-    </div>
+          <Tabs defaultValue="all" variant="pills" onChange={setActiveTab}>
+            <Tabs.List display="flex" justify="center" mt={30}>
+              {tabs}
+            </Tabs.List>
+            {projectTypes.map((tabName) => (
+              <Tabs.Panel key={tabName} value={tabName}>
+                <SimpleGrid
+                  cols={{ base: 1, md: 5, sm: 4, xs: 2, xxs: 2 }}
+                  spacing="xl"
+                  mt={50}
+                >
+                  {features}
+                </SimpleGrid>
+              </Tabs.Panel>
+            ))}
+          </Tabs>
+        </Container>
+      </div>
+    </section>
   );
 }

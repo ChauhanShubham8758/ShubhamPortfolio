@@ -12,12 +12,14 @@ import classes from "./EmailBanner.module.css";
 
 export function EmailBanner() {
   return (
-    <div className={classes.outer}>
+   
+     <div className={classes.outer}>
       <Container
         pt={{ sm: "20px", md: "100px" }}
-        pb={{ sm: "80px", md: "100px", xs: "40px" }}
-        pl={{ xs: "0" }}
-        pr={{ xs: "0" }}
+        pb={{ sm: "80px", md: "100px", xs: "66px" , lg:"100px"}}
+        pl={{ sm: "0" }}
+        pr={{ sm: "0" }}
+        className={classes.banner_container}
       >
         <Flex
           gap="xl"
@@ -76,5 +78,6 @@ export function EmailBanner() {
         </Flex>
       </Container>
     </div>
+   
   );
 }

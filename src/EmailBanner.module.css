@@ -1,35 +1,24 @@
-
 .content {
   max-width: 480px;
   width: 100%;
 }
 
 .outer {
-  background: #EDF2F8;
+  background: #edf2f8;
 }
 
 .title {
   color: var(--mantine-color-black);
-  font-family:
-    Greycliff CF,
-    var(--mantine-font-family);
+  font-family: Greycliff CF, var(--mantine-font-family);
   font-size: 44px;
   line-height: 1.2;
   font-weight: 900;
-
-  /* @media (max-width: 30em) {
-    font-size: 28px;
-  } */
 }
-
 
 .image {
   max-width: 376px !important;
   height: 356px;
   width: 100%;
-  /* @media (max-width: 64em) {
-    display: none;
-  } */
 }
 
 .highlight {
@@ -38,7 +27,12 @@
   border-radius: var(--mantine-radius-sm);
   padding: 4px 12px;
 }
-.authername
-{
+.authername {
   font-size: 53px !important;
+}
+
+@media (max-width: 426px) {
+  .banner_container{
+    padding-bottom: 25px;
+  }
 }
