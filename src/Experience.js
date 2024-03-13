@@ -4,22 +4,23 @@ import classes from "./Experience.module.css";
 import WorkExperience from "./TimeLine";
 import Education from "./Education";
 import AboutMe from "./AboutMe";
+import useViewPort from "./hooks/useViewPort";
 
 const tabs = {
   about: <AboutMe></AboutMe>,
-
   general: <WorkExperience></WorkExperience>,
   test: <Education></Education>,
 };
 
 export function Experience() {
   const [section, setSection] = useState("about");
+  const size=useViewPort();
 
   return (
     <section id="about" className={classes.aboutSection}>
       <Group justify="center">  
         <Badge variant="filled" size="lg">
-          Experience at a Glance{" "}
+          All about me and my Experience{" "}
         </Badge>
       </Group>
 
@@ -42,7 +43,7 @@ export function Experience() {
               value={section}
               onChange={(value) => setSection(value)}
               transitionTimingFunction="ease"
-              size="md"
+              size={size}
               radius="xl"
               data={[
                 { label: "About me", value: "about" },

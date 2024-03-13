@@ -5,7 +5,7 @@ export function ProjectLists({ cardItem }) {
   return (
     <Card withBorder radius="md" className={classes.card} key={cardItem.title}>
       <div>
-        <a href={cardItem.website} target="_blank">
+        <a href={cardItem.website} target="_blank" rel="noreferrer">
           <div>
             <Image
               src={cardItem.logo}
@@ -15,7 +15,14 @@ export function ProjectLists({ cardItem }) {
           </div>
         </a>
 
-        <Text className={classes.title} fw={"bold"} component={!!cardItem.website && "a"} href={cardItem.website} target="_blank">
+        <Text
+          className={classes.title}
+          fw={"bold"}
+          component={!!cardItem.website && "a"}
+          href={cardItem.website}
+          target="_blank"
+          mt={13}
+        >
           {cardItem.title}
         </Text>
 

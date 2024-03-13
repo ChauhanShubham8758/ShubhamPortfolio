@@ -81,15 +81,14 @@ export function EmailBanner() {
                 href="https://wa.me/919106909466"
                 rel="noreferrer"
               >
-                <Button
-                  variant="filled"
-                  radius="xl"
-                  size="md"
-                  color="teal"
-                  // className={classes.control}
-                >
+                <Button variant="filled" radius="xl" size="md" color="teal">
                   WhatsApp
-                  <ActionIcon size="lg" color="white" variant="transparent">
+                  <ActionIcon
+                    size="lg"
+                    color="white"
+                    variant="transparent"
+                    component="div"
+                  >
                     <IconBrandWhatsapp
                       style={{ width: rem(25), height: rem(25) }}
                       stroke={1.5}

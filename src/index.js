@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { createTheme, MantineProvider } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createTheme, MantineProvider } from '@mantine/core';
+
 import '@mantine/core/styles.css';
+import "@mantine/notifications/styles.css";
+import './index.css';
 
 const theme = createTheme({
   breakpoints: {
@@ -19,6 +22,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <MantineProvider theme={theme}>
+    <Notifications />
       <App/>
     </MantineProvider>
   </React.StrictMode>

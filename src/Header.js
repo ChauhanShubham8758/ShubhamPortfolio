@@ -17,7 +17,6 @@ import {
   useMantineTheme,
   Image,
   Tabs,
-  px,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import {
@@ -160,7 +159,12 @@ export function Header() {
                   withinPortal
                 >
                   <HoverCard.Target>
-                    <Button className={classes.link} padding={"0"} variant="subtle" color="black">
+                    <Button
+                      className={classes.link}
+                      padding={"0"}
+                      variant="subtle"
+                      color="black"
+                    >
                       <Center inline>
                         <Box component="span" mr={5}>
                           Connect with me
@@ -198,32 +202,54 @@ export function Header() {
         hiddenFrom="sm"
         zIndex={1000000}
       >
-        <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
+        <Image
+          src="https://res.cloudinary.com/dcmpkhero/image/upload/v1710161110/projects/zaef2jg2t1pwwhdi6em2.png"
+          height={40}
+          className={classes.drawerImg}
+        />
+        <Divider my="sm" />
 
-          <a href="#" className={classes.link}
-           onClick={() => handleScroll("home")}
+        <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
+          <button style={{backgroundColor: "white", border: "none"}}
+            href="#"
+            className={classes.link}
+            onClick={() => handleScroll("home")}
           >
             Home
-          </a>
+          </button>
 
-          <a href="#" className={classes.link} onClick={() => handleScroll("about")}>
+          <button style={{backgroundColor: "white", border: "none"}}
+            href="#"
+            className={classes.link}
+            onClick={() => handleScroll("about")}
+          >
             About
-          </a>
-          <a href="#" className={classes.link} onClick={() => handleScroll("projects")}>
+          </button>
+
+          <button style={{backgroundColor: "white", border: "none"}}
+            href="#"
+            className={classes.link}
+            onClick={() => handleScroll("projects")}
+          >
             Projects
-          </a>
+          </button>
 
-          <a href="#" className={classes.link} onClick={() => handleScroll("skills")}>
+          <button style={{backgroundColor: "white", border: "none"}}
+            href="#"
+            className={classes.link}
+            onClick={() => handleScroll("skills")}
+          >
             Skills
-          </a>
+          </button>
 
-          <a href="#" className={classes.link} onClick={() => handleScroll("skills")}>
-            Skills
-          </a>
-          <a href="#" className={classes.link} onClick={() => handleScroll("contact")}>
+          <button style={{backgroundColor: "white", border: "none"}}
+            href="#"
+            className={classes.link}
+            onClick={() => handleScroll("contact")}
+          >
             Contact me
-          </a>
-          
+          </button>
+
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
@@ -236,86 +262,10 @@ export function Header() {
             </Center>
           </UnstyledButton>
           <Collapse in={linksOpened}>{links}</Collapse>
-          
 
           <Divider my="sm" />
-
-          <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
-          </Group>
         </ScrollArea>
       </Drawer>
-
-      {/* <Drawer
-        opened={drawerOpened}
-        onClose={closeDrawer}
-        size="100%"
-        padding="md"
-        hiddenFrom="sm"
-        zIndex={1000000}
-      >
-        <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md" display={"grid"}>
-          <Button
-            href="#"
-            className={classes.link}
-            onClick={() => handleScroll("home")}
-          >
-            Home
-          </Button>
-
-          <Button
-            href="#"
-            className={classes.link}
-            onClick={() => handleScroll("about")}
-          >
-            About
-          </Button>
-
-          <Button
-            href="#"
-            className={classes.link}
-            onClick={() => handleScroll("projects")}
-          >
-            Projects
-          </Button>
-
-          <Button
-            href="#"
-            className={classes.link}
-            onClick={() => handleScroll("skills")}
-          >
-            Skills
-          </Button>
-
-          <Button
-            href="#"
-            className={classes.link}
-            onClick={() => handleScroll("contact")}
-          >
-            Contact Me
-          </Button>
-          <UnstyledButton className={classes.link} onClick={toggleLinks}>
-            <Center inline>
-              <Box component="span" mr={5}>
-                Connect with me
-              </Box>
-              <IconChevronDown
-                style={{ width: rem(16), height: rem(16) }}
-                color={theme.colors.blue[6]}
-              />
-            </Center>
-          </UnstyledButton>
-          <Collapse in={linksOpened}>{links}</Collapse>
-
-          <Divider my="sm" />
-
-          <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
-          </Group>
-        </ScrollArea>
-      </Drawer> */}
     </Box>
   );
 }

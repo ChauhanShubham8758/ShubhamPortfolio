@@ -134,7 +134,7 @@ export function SkillsSection() {
     .map((item) => (
       <UnstyledButton key={item.title} className={classes.item}>
         <Avatar
-          variant="filled"
+          variant="transparent"
           radius="xs"
           size="lg"
           src={item.logo}

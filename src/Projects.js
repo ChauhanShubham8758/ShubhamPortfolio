@@ -6,7 +6,6 @@ import {
   SimpleGrid,
   Container,
   Tabs,
-  Center,
 } from "@mantine/core";
 import classes from "./Projects.module.css";
 import { ProjectLists } from "./ProjectLists";
@@ -31,7 +30,7 @@ const mockdata = [
     ],
     logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1709888787/projects/iovfkg8k6rc448f66pdg.png",
     website: "https://www.prioritycouriers.com/",
-    projectTypes: ["Dotnet Core"]
+    projectTypes: ["Dotnet Core"],
   },
   {
     title: "Dice Fanatics",
@@ -50,8 +49,9 @@ const mockdata = [
       "OAuth",
     ],
     logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1709707503/projects/h6u3ufzvngcdcxa7eqop.png",
-    website: "https://play.google.com/store/apps/details?id=com.wogdmobile&pcampaignid=web_share",
-    projectTypes: ["Dotnet Core"]
+    website:
+      "https://play.google.com/store/apps/details?id=com.wogdmobile&pcampaignid=web_share",
+    projectTypes: ["Dotnet Core"],
   },
   {
     title: "ErpCrebit",
@@ -71,7 +71,7 @@ const mockdata = [
     ],
     logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1709706174/projects/sjt6awdcp1eullbb73kh.jpg",
     website: "https://infiniti.erpcrebit.com/",
-    projectTypes: ["Dotnet Core","dotnet mvc", "Blazor"]
+    projectTypes: ["Dotnet Core", "dotnet mvc", "Blazor"],
   },
   {
     title: "Find Funder",
@@ -88,20 +88,29 @@ const mockdata = [
     ],
     logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1650866664/MyImages/logo_bbfkzq.png",
     website: "",
-    projectTypes: ["Dotnet Core","react"]
+    projectTypes: ["Dotnet Core", "react"],
   },
 ];
 
-const projectTypes = ["all",...new Set(mockdata.flatMap(({projectTypes})=>projectTypes.map(Project=>Project.toLowerCase())))];
+const projectTypes = [
+  "all",
+  ...new Set(
+    mockdata.flatMap(({ projectTypes }) =>
+      projectTypes.map((Project) => Project.toLowerCase())
+    )
+  ),
+];
 
 export function Projects() {
-  const [activeTab,setActiveTab]=useState("all");
+  const [activeTab, setActiveTab] = useState("all");
 
   const features = mockdata
     .filter(
       ({ projectTypes }) =>
         activeTab === "all" ||
-        projectTypes.some((project)=>project.toLowerCase()===activeTab.toLowerCase())
+        projectTypes.some(
+          (project) => project.toLowerCase() === activeTab.toLowerCase()
+        )
     )
     .map((feature) => (
       <div key={feature.title}>
@@ -116,36 +125,37 @@ export function Projects() {
   ));
 
   return (
-   <section  id="projects">
-     <Container size="lg" py="xl">
-      <Group justify="center">
-        <Badge variant="filled" size="lg">
-          My Projects
-        </Badge>
-      </Group>
+    <section id="projects">
+      <Container size="lg" py="xl">
+        <Group justify="center">
+          <Badge variant="filled" size="lg">
+            My Projects
+          </Badge>
+        </Group>
 
-      <Title order={2} className={classes.title} ta="center" mt="sm" mb="sm">
-        Discover My Creative Projects
-      </Title>
+        <Title order={2} className={classes.title} ta="center" mt="sm" mb="sm">
+          Discover My Creative Projects
+        </Title>
 
-      <Text c="dimmed" className={classes.description} ta="center" m={"auto"}>
-        Discover my passion for innovation through meticulously crafted
-        projects, where creativity meets attention to detail.
-      </Text>
+        <Text c="dimmed" className={classes.description} ta="center" m={"auto"}>
+          Discover my passion for innovation through meticulously crafted
+          projects, where creativity meets attention to detail.
+        </Text>
 
-      <Tabs defaultValue="all" variant="pills" onChange={setActiveTab}>
-       
-       <Tabs.List display="flex" justify="center" mt={30}>{tabs}</Tabs.List>
+        <Tabs defaultValue="all" variant="pills" onChange={setActiveTab}>
+          <Tabs.List display="flex" justify="center" mt={30}>
+            {tabs}
+          </Tabs.List>
 
-        {projectTypes.map((tabName)=>(
-        <Tabs.Panel key={tabName} value={tabName}>
-          <SimpleGrid cols={{ base: 1, md: 3, sm:2 }} spacing="xl" mt={50}>
-            {features}
-          </SimpleGrid>
-        </Tabs.Panel>
-        ))}
-      </Tabs>
-    </Container>
-   </section>
+          {projectTypes.map((tabName) => (
+            <Tabs.Panel key={tabName} value={tabName}>
+              <SimpleGrid cols={{ base: 1, md: 3, sm: 2 }} spacing="xl" mt={50}>
+                {features}
+              </SimpleGrid>
+            </Tabs.Panel>
+          ))}
+        </Tabs>
+      </Container>
+    </section>
   );
 }

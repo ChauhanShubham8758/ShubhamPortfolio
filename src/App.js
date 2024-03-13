@@ -6,7 +6,7 @@ import { FooterLinks } from "./FooterLinks.js";
 import { Header } from "./Header.js";
 import { Projects } from "./Projects";
 import { SkillsSection } from "./SkillsSection";
-import { Affix, Button, Text, Transition, rem } from '@mantine/core';
+import { Affix, Button, Transition, rem } from '@mantine/core';
 import { useWindowScroll } from '@mantine/hooks';
 import { IconArrowUp } from '@tabler/icons-react';
 

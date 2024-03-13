@@ -7,10 +7,40 @@ import {
   Button,
   Group,
   Image,
+  rem
 } from "@mantine/core";
 import classes from "./Contact.module.css";
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { notifications } from "@mantine/notifications";
+import { IconCheck } from "@tabler/icons-react";
 
 export function ContactUs() {
+  const [values, setValues] = useState({
+    fullName: "",
+    email: "",
+    mail_subject: "",
+    message: "",
+  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .send("service_s12ke9b", "template_9f3yf0m", values, "Zek9_7OjbykIamCYo")
+      .then(
+        (response) => {},
+        (error) => {
+          console.log("FAILED...", error);
+        }
+      );
+  };
+
+  const handleChange = (e) => {
+    setValues((values) => ({
+      ...values,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <section id="contact">
       <div className={classes.contactParentDiv}>
@@ -23,7 +53,7 @@ export function ContactUs() {
           <div className={classes.socialMedia}>
             <Title>Get in touch</Title>
             <Text mt="sm">
-              If you wish to react out to me please feel free to leave your mail
+              If you wish to reach out to me please feel free to leave your mail
               here
             </Text>
             <Image
@@ -31,23 +61,79 @@ export function ContactUs() {
               h={{ xs: 300, sm: 400, md: 400, lg: 400 }}
               w="100%"
               fit="contain"
-              src="https://res.cloudinary.com/dcmpkhero/image/upload/v1709723761/projects/wzjl7f8indce5fyufhzq.jpg"
+              src="https://res.cloudinary.com/dcmpkhero/image/upload/v1710329795/projects/jiocbnb0wtym4femoacw.jpg"
             />
           </div>
           <div className={classes.contactForm}>
-            <TextInput label="Email" placeholder="your@email.com" required />
-            <TextInput label="Name" placeholder="John Doe" mt="md" />
-            <Textarea
-              required
-              label="Your message"
-              placeholder="Drop your message here"
-              minRows={4}
-              mt="md"
-            />
+            <form onSubmit={handleSubmit}>
+              <TextInput
+                label="Email"
+                placeholder="your@email.com"
+                value={values.email}
+                onChange={handleChange}
+                name="email"
+                required
+              />
+              <TextInput
+                label="Name"
+                placeholder="John Doe"
+                value={values.fullName}
+                onChange={handleChange}
+                name="fullName"
+                mt="md"
+              />
+              <TextInput
+                label="Subject"
+                placeholder="Your subject"
+                mt="md"
+                name="mail_subject"
+                value={values.mail_subject}
+                onChange={handleChange}
+              />
 
-            <Group justify="flex-end" mt="md">
-              <Button>Send message</Button>
-            </Group>
+              <Textarea
+                required
+                label="Your message"
+                placeholder="Drop your message here"
+                minRows={4}
+                mt="md"
+                name="message"
+                value={values.message}
+                onChange={handleChange}
+              />
+
+              <Group justify="flex-end" mt="md">
+                <Button type="submit"
+                  onClick={() => {
+                    const id = notifications.show({
+                      loading: true,
+                      title: "Patience, Please! Your Message is on the Way.",
+                      autoClose: false,
+                      withCloseButton: false,
+                    });
+
+                    setTimeout(() => {
+                      notifications.update({
+                        id,
+                        color: "teal",
+                        title: "Your message has been sent",
+                        message:
+                          "Got it! I'll Keep an Eye on My Inbox. Thanks for Reaching Out!",
+                        icon: (
+                          <IconCheck
+                            style={{ width: rem(18), height: rem(18) }}
+                          />
+                        ),
+                        loading: false,
+                        autoClose: 2000,
+                      });
+                    }, 3000);
+                  }}
+                >
+                  Send email 
+                </Button>
+              </Group>
+            </form>
           </div>
         </SimpleGrid>
       </div>

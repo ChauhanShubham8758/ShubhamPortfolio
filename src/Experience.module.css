@@ -17,7 +17,7 @@
 }
 
 .title {
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: -0.25px;
 }
 .link :hover {
@@ -101,12 +101,7 @@
   }
 }
 
-
 @media (max-width: 768px) {
-  /* .imgDiv {
-    display: none;
-  } */
-
   .sectionDiv {
     width: 100%;
   }
@@ -115,7 +110,7 @@
   }
 }
 
-.aboutSection{
+.aboutSection {
   margin-top: 50px;
   margin-bottom: 50px;
 }

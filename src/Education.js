@@ -3,6 +3,7 @@ import { Timeline, Text } from '@mantine/core';
 import { IconSchool } from '@tabler/icons-react';
 
 export default function Education() {
+  
   return (
     <Timeline active={3} bulletSize={24} lineWidth={2}>
       <Timeline.Item bullet={<IconSchool size={12} />} title="Masters in Computer Applications">
@@ -24,7 +25,6 @@ export default function Education() {
         <Text c="dimmed" size="md">Saraswati Hindi Vidhyalay (76.5%)</Text>
         <Text size="xs" mt={4}>2014-2015</Text>
       </Timeline.Item>
-    
     </Timeline>
   );
 }

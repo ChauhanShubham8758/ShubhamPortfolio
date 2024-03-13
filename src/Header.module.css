@@ -9,7 +9,7 @@
   align-items: center;
   height: 100%;
   padding-left: var(--mantine-spacing-md) !important;
-  padding-right: var(--mantine-spacing-md) !important; 
+  padding-right: var(--mantine-spacing-md) !important;
   text-decoration: none;
   color: var(--mantine-color-black);
   font-weight: 500;
@@ -21,10 +21,27 @@
     height: 42px;
     width: 100%;
   }
+
+  .drawerImg {
+    width: 40% !important;
+  }
 }
+
+@media (max-width: 375px) {
+  .drawerImg {
+    width: 47% !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .drawerImg {
+    width: 55% !important;
+  }
+}
+
 .link:hover {
-  background-color: transparent !important;;
-    color: black;
+  background-color: transparent !important;
+  color: black;
 }
 
 .subLink {
@@ -50,7 +67,7 @@
 }
 
 @media (max-width: 768px) {
-  .tabListItems{
+  .tabListItems {
     gap: 30px !important;
   }
 }
