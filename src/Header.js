@@ -62,11 +62,13 @@ export function Header() {
   const theme = useMantineTheme();
 
   const handleScroll = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      closeDrawer(true);
-    }
+    closeDrawer(true);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 200);
   };
 
   const links = mockdata.map((item) => (
@@ -210,7 +212,8 @@ export function Header() {
         <Divider my="sm" />
 
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
-          <a style={{backgroundColor: "white", border: "none"}}
+          <a
+            style={{ backgroundColor: "white", border: "none" }}
             href="#"
             className={classes.link}
             onClick={() => handleScroll("home")}
@@ -218,15 +221,17 @@ export function Header() {
             Home
           </a>
 
-          <a style={{backgroundColor: "white", border: "none"}}
-            href="#experienceTitle"
+          <a
+            style={{ backgroundColor: "white", border: "none" }}
+            href="#"
             className={classes.link}
             onClick={() => handleScroll("about")}
           >
             About
           </a>
 
-          <a style={{backgroundColor: "white", border: "none"}}
+          <a
+            style={{ backgroundColor: "white", border: "none" }}
             href="#"
             className={classes.link}
             onClick={() => handleScroll("projects")}
@@ -234,15 +239,17 @@ export function Header() {
             Projects
           </a>
 
-          <a style={{backgroundColor: "white", border: "none"}}
-            href="#skillsTitle"
+          <a
+            style={{ backgroundColor: "white", border: "none" }}
+            href="#"
             className={classes.link}
             onClick={() => handleScroll("skills")}
           >
             Skills
           </a>
 
-          <a style={{backgroundColor: "white", border: "none"}}
+          <a
+            style={{ backgroundColor: "white", border: "none" }}
             href="#"
             className={classes.link}
             onClick={() => handleScroll("contact")}
