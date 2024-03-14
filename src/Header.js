@@ -210,45 +210,45 @@ export function Header() {
         <Divider my="sm" />
 
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
-          <button style={{backgroundColor: "white", border: "none"}}
+          <a style={{backgroundColor: "white", border: "none"}}
             href="#"
             className={classes.link}
             onClick={() => handleScroll("home")}
           >
             Home
-          </button>
+          </a>
 
-          <button style={{backgroundColor: "white", border: "none"}}
+          <a style={{backgroundColor: "white", border: "none"}}
             href="#"
             className={classes.link}
             onClick={() => handleScroll("about")}
           >
             About
-          </button>
+          </a>
 
-          <button style={{backgroundColor: "white", border: "none"}}
+          <a style={{backgroundColor: "white", border: "none"}}
             href="#"
             className={classes.link}
             onClick={() => handleScroll("projects")}
           >
             Projects
-          </button>
+          </a>
 
-          <button style={{backgroundColor: "white", border: "none"}}
+          <a style={{backgroundColor: "white", border: "none"}}
             href="#"
             className={classes.link}
             onClick={() => handleScroll("skills")}
           >
             Skills
-          </button>
+          </a>
 
-          <button style={{backgroundColor: "white", border: "none"}}
+          <a style={{backgroundColor: "white", border: "none"}}
             href="#"
             className={classes.link}
             onClick={() => handleScroll("contact")}
           >
             Contact me
-          </button>
+          </a>
 
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
             <Center inline>
