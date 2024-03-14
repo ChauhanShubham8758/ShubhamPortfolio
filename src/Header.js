@@ -219,7 +219,7 @@ export function Header() {
           </a>
 
           <a style={{backgroundColor: "white", border: "none"}}
-            href="#"
+            href="#experienceTitle"
             className={classes.link}
             onClick={() => handleScroll("about")}
           >
@@ -235,7 +235,7 @@ export function Header() {
           </a>
 
           <a style={{backgroundColor: "white", border: "none"}}
-            href="#"
+            href="#skillsTitle"
             className={classes.link}
             onClick={() => handleScroll("skills")}
           >

@@ -163,6 +163,7 @@ export function SkillsSection() {
             ta="center"
             mt="sm"
             mb="sm"
+            id="skillsTitle"
           >
             My Technical Skills
           </Title>

@@ -24,7 +24,7 @@ export function Experience() {
         </Badge>
       </Group>
 
-      <Title order={2} className={classes.title} ta="center" mt="xl" mb="xl">
+      <Title order={2} className={classes.title} ta="center" mt="xl" mb="xl" id="experienceTitle">
         Explore my journey's highlights in a glance.
       </Title>
       <nav className={classes.navbar}>
