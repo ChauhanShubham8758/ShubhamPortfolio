@@ -36,22 +36,23 @@ export function EmailBanner() {
         >
           <Container w={{ sm: "100%", md: "100%" }} ta={{ sm: "center" }}>
             <Image
-              src="https://icons.iconarchive.com/icons/blackvariant/button-ui-requests-5/256/ToDo-List-icon.png"
+              src="https://res.cloudinary.com/dcmpkhero/image/upload/v1710382018/ohqpfjapbdi2nm1l5eh6.png"
               width={"100%"}
-              maw={"376px"}
+              maw={{sm:"65% !important",xs:"100%", xxs:"100%",md:"60%",lg:"50%"}}
               display={"inline"}
+              style={{mixBlendMode:"darken"}}
             />
             <Title className={classes.title}>
-              Hello, my name is
+            Hey there, I'm 
               <TypeAnimation
                 sequence={[` Shubham Chauhan`, 1000, ""]}
                 speed={50}
-                style={{ whiteSpace: "pre-line", fontSize: "30px" }}
+                style={{ whiteSpace: "pre-line", fontSize: "30px", color:"#dc143c"}}
                 repeat={Infinity}
               />
             </Title>
 
-            <Text ta={"justify"} c="dimmed" mt="md">
+            <Text ta={"justify"}  mt="md">
               I'm an experienced software developer skilled in Blazor, .NET
               Core, and React.js. With a track record of delivering high-quality
               solutions, I specialize in dynamic web applications and robust

@@ -25,7 +25,7 @@ export function ContactUs() {
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
-      .send("service_s12ke9b", "template_9f3yf0m", values, "Zek9_7OjbykIamCYo")
+      .send("service_qm781ap", "template_5lw300e", values, "Vzg3CdkwzyTysFVX_")
       .then(
         (response) => {},
         (error) => {

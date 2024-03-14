@@ -42,7 +42,7 @@
 
   .item_desc
   {
-    /* word-break: break-all; */
+    color: black !important;
   }
 
   .techstack

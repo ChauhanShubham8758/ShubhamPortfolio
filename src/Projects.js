@@ -86,7 +86,7 @@ const mockdata = [
       "REST API",
       "Azure Devops",
     ],
-    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1650866664/MyImages/logo_bbfkzq.png",
+    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710378462/fkmpfwxuoc44tsyy2ptm.png",
     website: "",
     projectTypes: ["Dotnet Core", "react"],
   },
