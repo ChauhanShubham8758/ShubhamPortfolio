@@ -32,11 +32,6 @@ const mockdata = [
     type: ["back-end"],
   },
   {
-    title: "Oracle",
-    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710079116/projects/abffqt9xf9b4gl5w5qta.png",
-    type: ["back-end"],
-  },
-  {
     title: "Asp.net MVC",
     logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710133742/projects/dqlpvwxnrgbxpyf3a2wy.png",
     type: ["back-end"],
@@ -69,11 +64,6 @@ const mockdata = [
   {
     title: "React",
     logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710079117/projects/kfhwlnq0poqtmuohu858.png",
-    type: ["front-end"],
-  },
-  {
-    title: "Redux",
-    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710079118/projects/uiorlsm2bn2gvxeextos.png",
     type: ["front-end"],
   },
   {
