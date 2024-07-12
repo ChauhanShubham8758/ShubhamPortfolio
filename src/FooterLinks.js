@@ -40,7 +40,7 @@ export function FooterLinks() {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/shubham-c-4b0739153/"
+            href="https://www.linkedin.com/in/shubham-s-chauhan/"
             target="_blank"
             rel="noreferrer"
           >
