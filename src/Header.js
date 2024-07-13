@@ -39,7 +39,7 @@ const mockdata = [
     icon: IconBrandLinkedin,
     title: "LinkedIn",
     description: "Enhancing connections on LinkedIn. Let's connect!",
-    link: "https://www.linkedin.com/in/shubham-c-4b0739153/",
+    link: "https://www.linkedin.com/in/shubham-s-chauhan/",
   },
   {
     icon: IconBrandMedium,
