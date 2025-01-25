@@ -8,11 +8,10 @@ export default function AboutMe() {
     <Timeline ta={"justify"} active={3} bulletSize={24} lineWidth={2}>
       <Timeline.Item bullet={<IconCircleDotFilled size={12} />} >
         <Text ta={"justify"}  size="md">
-          Greetings! Currently serving as a Dotnet Core Developer at BigScal
-          Technologies Pvt Ltd. Holding a Master's degree in Computer
+          Greetings! Currently serving as a Software Engineer at Radixweb. Holding a Master's degree in Computer
           Applications from Sardar Patel University, Gujarat (2020-2022), I've
           improved my skills set in various technologies, including Dotnet MVC,
-          Blazor, and ReactJS.
+          Blazor, and ReactJS and Angular.
         </Text>
       </Timeline.Item>
 

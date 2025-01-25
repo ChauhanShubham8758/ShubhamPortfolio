@@ -101,6 +101,32 @@ const mockdata = [
     logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1710092298/projects/dvldmlncsybdfnrofpjx.png",
     type: ["front-end"],
   },
+  {
+    title: "SharePoint",
+    logo: "https://res-console.cloudinary.com/dcmpkhero/thumbnails/v1/image/upload/v1737833610/cHJvamVjdHMvTWljcm9zb2Z0X09mZmljZV9TaGFyZVBvaW50X18yMDE5X3ByZXNlbnRfLnN2Z191anR0a3M=/drilldown",
+    type: ["front-end"],
+  },
+  {
+    title: "Power Automate",
+    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1737833895/projects/Microsoft_Power_Automate.svg_xx3tuq.png",
+    type: ["front-end"],
+  },
+  {
+    title: "Angular",
+    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1737834180/projects/angular-icon-2048x2048-24b236vf_wng9k0.png",
+    type: ["front-end"],
+  },
+  {
+    title: "Azure Devops",
+    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1737834500/projects/devops_f3kv0v.png",
+    type: ["cloud"],
+  },
+  {
+    title: "Microsoft Azure",
+    logo: "https://res.cloudinary.com/dcmpkhero/image/upload/v1737834511/projects/microsoft_azure.svg__popbvf.png",
+    type: ["cloud"],
+  },
+  
 ];
 
 const projectTypes = [

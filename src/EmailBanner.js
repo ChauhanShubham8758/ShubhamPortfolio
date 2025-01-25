@@ -68,7 +68,7 @@ export function EmailBanner() {
               <a
                 style={{ color: "white", textDecoration: "none" }}
                 target="_blank"
-                href="https://res.cloudinary.com/dcmpkhero/image/upload/v1714581745/projects/my%20resume/Shubham_Chauhan_Resume.pdf"
+                href="https://res.cloudinary.com/dcmpkhero/image/upload/v1737835116/projects/ShubhamChauhan_DotnetDeveloper_1_fl6o41.pdf"
                 rel="noreferrer"
               >
                 <Button radius="xl" size="md" className={classes.control}>
